@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^airlinestats2\.Rproj$
+^\.Rproj\.user$
