@@ -1,0 +1,4 @@
+from,to,Passengers,Distance
+SFO,JFK,2,2586
+RDU,CLT,3,130
+JFK,SFO,2,2586

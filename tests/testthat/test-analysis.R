@@ -20,3 +20,11 @@ test_that("Error when passengers column missing", {
   data = get_data() %>% dplyr::select(-Passengers)
   expect_error(busiest_routes(data, Origin, Destination))
 })
+
+test_that("busiest routes is correct", {
+  data = readr::read_csv(system.file("extdata", "passengers.csv", package="airlinestats2"))
+  result = busiest_routes(data, from, to)
+  expect_equal(result$airport1, c("JFK", "CLT"))
+  expect_equal(result$airport2, c("SFO", "RDU"))
+  expect_equal(result$Passengers, c(4, 3))
+})
