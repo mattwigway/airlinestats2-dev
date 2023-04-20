@@ -6,6 +6,19 @@
 \usage{
 busiest_routes(dataframe, origincol, destcol)
 }
+\arguments{
+\item{dataframe}{data}
+
+\item{origincol}{origin column}
+
+\item{destcol}{destination column}
+}
+\value{
+busiest routes
+}
 \description{
-Compute busiest routes
+foo
+}
+\details{
+foo
 }

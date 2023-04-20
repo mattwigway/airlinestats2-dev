@@ -6,6 +6,19 @@
 \usage{
 load_data(datafile, cityfile, carrierfile)
 }
+\arguments{
+\item{datafile}{Data file name}
+
+\item{cityfile}{City file name}
+
+\item{carrierfile}{Carrier file name}
+}
+\value{
+linked data
+}
 \description{
-Load DB1B data
+bar
+}
+\details{
+bar
 }
