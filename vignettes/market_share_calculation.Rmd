@@ -1,0 +1,29 @@
+---
+title: "market_share_calculation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{market_share_calculation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(airlinestats2)
+```
+
+```{r}
+data = dplyr::tibble(
+    Origin=c("RDU", "RDU", "CLT", "CLT", "CLT"),
+    OperatingCarrierName = c("Southwest", "Delta", "American", "American", "Piedmont"),
+    Passengers=rep(1, 5)
+)
+
+market_shares(data, Origin, OperatingCarrierName)
+```

@@ -1,3 +1,5 @@
+#' Load DB1B data
+#'
 #' @export
 load_data = function (datafile, cityfile, carrierfile) {
   # first, we need to load the data

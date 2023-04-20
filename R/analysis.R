@@ -1,6 +1,8 @@
 
 KILOMETERS_PER_MILE = 1.609
 
+#' Compute busiest routes
+#'
 #' @export
 busiest_routes = function (dataframe, origincol, destcol) {
   stopifnot(all(dataframe$Passengers >= 1))
@@ -27,6 +29,21 @@ busiest_routes = function (dataframe, origincol, destcol) {
   return(arrange(pairs, -Passengers))
 }
 
+#' Compute carrier market shares by airport
+#'
+#' This function computes the market share of each carrier at each airport.
+#'
+#' The carrier and airport columns can be specified manually, so ticketing or operating
+#' carrier can be used (or another carrier column, if you had one---for instance, mainline
+#' vs regional carrier market share, or legacy vs. low-cost). The airport column is likewise
+#' an argument, so market shares per-airport, per-city, per-state, etc. can be calculated.
+#'
+#' @param dataframe data to use
+#' @param carriercol column of data frame that specifies carrier
+#' @param origincol column of data frame that specifies airport
+#'
+#' @returns dataset containing market shares by airline and airport
+#'
 #' @export
 market_shares = function (dataframe, carriercol, origincol) {
   mkt_shares = group_by(dataframe, {{ carriercol }}, {{ origincol }}) %>%
