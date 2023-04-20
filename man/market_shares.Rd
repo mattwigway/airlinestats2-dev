@@ -6,6 +6,16 @@
 \usage{
 market_shares(dataframe, carriercol, origincol)
 }
+\arguments{
+\item{dataframe}{data to use}
+
+\item{carriercol}{column of data frame that specifies carrier}
+
+\item{origincol}{column of data frame that specifies airport}
+}
+\value{
+dataset containing market shares by airline and airport
+}
 \description{
 This function computes the market share of each carrier at each airport.
 }
