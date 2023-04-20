@@ -32,7 +32,7 @@ market_shares = function (dataframe, carriercol, origincol) {
   mkt_shares = group_by(dataframe, {{ carriercol }}, {{ origincol }}) %>%
     summarize(Passengers=sum(Passengers)) %>%
     group_by({{ origincol }}) %>%
-    mutate(market_share=Passengers/sum(Passengers), total_passengers=sum(Passengers)) %>%
+    mutate(market_share=Passengers/sum(Passengers) * 100, total_passengers=sum(Passengers)) %>%
     ungroup()
 
   return(mkt_shares)
