@@ -13,7 +13,7 @@ test_that("Market shares sum to 1", {
   shares = market_shares(data, Carrier, Origin)
   total_shares = group_by(shares, Origin) %>% summarize(overall=sum(market_share))
   # six airports, so six shares
-  expect_equal(total_shares$overall, rep(1, 6))
+  expect_equal(total_shares$overall, rep(100, 6))
 })
 
 test_that("Error when passengers column missing", {
